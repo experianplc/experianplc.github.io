@@ -1,0 +1,42 @@
+<main id="main" role="main" class="top64">
+<section id="searchResults">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        {{!-- Remove for now <section id="searchHero">
+          <form id="searchForm" class="" name="global-form" method="get" autocomplete="off" action="/">
+            <div class="form-group-lg floating-label-form-group search-form">
+              <input id="srchInput" class="form-control" name="q" value="test" placeholder="Search" type="text"> <label for="q">Search</label> <input id="srchBtn" class="form-submit" value="" data-di-id="" type="submit"> <span class="form-submit-bg"></span> <input name="sp_cs" value="UTF-8" type="hidden"> <input name="sp_c" value="10" type="hidden"> <span class="icon-search exp-l042-search-icon"></span>
+              <div id="autocomplete"></div>
+            </div>
+            <div style="text-align: left" id="resultsAll">
+              <strong class="totalCalc">{{repositories.length}}</strong>
+              <span class="resultsText">results</span> for
+              <strong><span class="resultQuery">test</span></strong>
+            </div>
+          </form>
+        </section> --}}
+        <script>var expSRP='';</script>
+        <div class="blockTitle">
+          <img alt="Consumer Results Icon" src="//www.experian.com/search/images/consumer_ico.png" width="32" height="26">
+          <h3>Repositories</h3>
+        </div>
+        <hr>
+        <div class="blockBox">
+          {{#each repositories as |repo|}}
+            <div class="blockResult">
+              <a href="{{repo.html_url}}">{{repo.name}}</a><br>
+              <div class="resultLink text-success">{{repo.html_url}}</div>
+              {{repo.description}}
+            </div>
+          {{/each}}
+        </div>
+
+        {{!-- Pagination is not necessary, not enough repos. Enable once we have enough.
+          <div id="resultsPag">    <strong>1</strong>&nbsp;    <a href="?i=1;page=2;q=test;sp_cs=UTF-8" class="page">2</a>&nbsp;    <a href="?i=1;page=3;q=test;sp_cs=UTF-8" class="page">3</a>&nbsp;   <a href="?i=1;page=3;q=test;sp_cs=UTF-8" class="page"></a> <a href="?i=1;page=2;q=test;sp_cs=UTF-8" class="page_arrow_text">Next</a> </div>
+        --}}
+      </div>
+    </div>
+  </div>
+</section>
+</main>

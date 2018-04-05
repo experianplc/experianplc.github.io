@@ -1,58 +1,3 @@
-<header>
-  <nav class="mobile-nav-closed">
-    <div class="mboxDefault">
-      <div class=" flx flx-wrap">
-        <div class="main-nav-container flx flx-yc">
-          <div class="mobile-top-bg"></div>
-          <div class="container">
-            <div class="row">
-
-              <div class="col-xs-12 flx main-menu-wrap flx-ys">
-                <div class="mobile-top-header flx flx-yc">
-                  <a class="logo" href="/">
-                    <div class="logo-img"></div>
-                  </a>
-                </div>
-
-                {{!-- Right now we don't want any of these 
-                  <ul class="left-main-nav main-nav flex-nav">
-                    <li class="main-nav-item ">
-
-                      <a class="main-dropdown-link flx flx-yc products-link" href="/consumer-products/compare-credit-report-and-score-products.html"><span>Reports &amp; Scores</span></a>
-                      <span class="mobile-dropdown-link ">Reports &amp; Scores <span class="dropdown-state plus"></span></span>
-                    </li>
-                    <li class="main-nav-item">
-
-                      <a class="main-dropdown-link flx flx-yc identity-link" href="/consumer-products/identity-theft-and-credit-protection.html"><span>Identity Protection</span></a>
-                      <span class="mobile-dropdown-link ">Identity Protection <span class="dropdown-state plus"></span></span>
-                    </li>
-                    <li class="main-nav-item">
-
-                      <a class="main-dropdown-link flx flx-yc credit-link" href="/credit/credit-cards-and-personal-loans/"><span>Credit Cards &amp; Loans</span></a>
-                      <span class="mobile-dropdown-link ">Credit Cards &amp; Loans <span class="dropdown-state plus"></span></span>
-                    </li>
-                    <li class="main-nav-item">
-
-                      <a class="main-dropdown-link flx flx-yc support-link" href="/help/"><span>Credit Report Assistance</span></a>
-                      <span class="mobile-dropdown-link ">Credit Report Assistance <span class="dropdown-state plus"></span></span>
-                    </li>
-                    <li class="main-nav-item">
-
-                      <a class="main-dropdown-link flx flx-yc education-link" href="/blogs/ask-experian/"><span>Education</span></a>
-                      <span class="mobile-dropdown-link">Education <span class="dropdown-state plus"></span></span>
-                    </li>
-                  </ul>
-                --}}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </nav>
-</header>
-
 <section id="help">
   <div class="container text-xs-center">
     <div class="row">
@@ -63,15 +8,15 @@
     <div class="row help-grid-container flx flx-wrap">
       {{#each featuredRepositories as |featuredRepository|}}
         <div class="col-xs-6 col-sm-4 help-item flx center-block border-bottom border-none-sm-bottom border-none-md-bottom border-none-lg-bottom border-right border-none-xs-right">
-          <a href={{featuredRepository._data.htmlUrl}}>
+          <a href={{featuredRepository.html_url}}>
             <div class="highlight"></div>
             {{!-- Add icons later
               <div class="help-icon-bg">
                 <span class="help-icon exp-l034-alert-report-icon"></span>
               </div>
             --}}
-            <h5>{{featuredRepository._data.name}}</h5>
-            <p>{{featuredRepository._data.description}}</p>
+            <h5>{{featuredRepository.name}}</h5>
+            <p>{{featuredRepository.description}}</p>
           </a>
         </div>
       {{/each}}
@@ -87,16 +32,7 @@
           <h2>Search our repositories.</h2>
           <h4>GitHub hosts our open source repositories, code and documentation.</h4>
         </div>
-        <form class="col-xl-11 center-col questions-form" name="global-form" method="get" autocomplete="off" action="https://search.experian.com/">
-          <div class="form-group-lg floating-label-form-group">
-            <input class="form-control" placeholder="Search" name="q" type="text">
-            <label for="q">Search</label>
-            <input class="form-submit" value="" data-di-id="" type="submit">
-            <span class="form-submit-bg"></span>
-            <input name="sp_cs" value="UTF-8" type="hidden">
-            <span class="exp-l042-search-icon"></span>
-          </div>
-        </form>
+        {{#link-to "repos" classNames="btn btn-primary"}}View All{{/link-to}}
       </div>
     </div>
   </div>
@@ -111,12 +47,11 @@
             <h5 class="mb-xs-0 mr-xs-0 mr-sm-40">Contribute to our repositories on GitHub.</h5>
           </div>
           <div class="flx flx-yc flx-jc-xc">
-            <a href="https://github.com/experianplc" class="btn btn-primary" type="submit">Follow Us</a>
+            <a href="https://github.com/experianplc" class="btn btn-primary" type="submit">View on
+              GitHub</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-{{experian-footer}}
